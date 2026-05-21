@@ -35,5 +35,19 @@ int main() {
     for (const auto& pair : flights) {
         cout << pair.first << ": " << pair.second << endl;
     }
+    // Milestone 2 Complete. Tracks airports with highest # of flights, handles ties, and displays them all.
+    int highestFlights = 0;
+    for (const auto& pair : flights) {
+        if (pair.second > highestFlights) {
+            highestFlights = pair.second;
+        }
+    }
+    cout << "Highest number of flights: " << highestFlights << endl;
+    cout << "Busiest airport(s) with " << highestFlights << " flights:" << endl;
+    for (const auto& pair : flights) {
+        if (pair.second == highestFlights) {
+            cout << pair.first << endl;
+        }
+    }
 
 }
