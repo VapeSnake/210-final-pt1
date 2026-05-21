@@ -21,13 +21,16 @@ int main() {
     int count;
 
     while (inFile >> flight) {
-        if (flights.find(flight) == flights.end()) {
-            flights[flight] = 1;
-        } else {
+        if (flights.find(flight) != flights.end()) {
             flights[flight]++;
+            count = flights[flight];
+        } else {
+            flights[flight] = 1;
         }
         
     }
+    inFile.close();
+
     for (const auto& pair : flights) {
         cout << pair.first << ": " << pair.second << endl;
     }
