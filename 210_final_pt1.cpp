@@ -9,6 +9,7 @@
 using namespace std;
 
 int main() {
+    // Milestone 1 Complete. Map created and file read successful. Map tracks all origin/destination airports and counts # of flights.
     map<string, int> flights;
 
     ifstream inFile;
